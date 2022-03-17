@@ -1,0 +1,21 @@
+
+<form [formGroup]="productForm" class="bg-white shadow-xl pb-8 border border-gray-200" (ngSubmit)="onSubmit()">
+    <div class="bg-adminBack flex flex-col space-y-6 items-center justify-center h-screen">
+        <div class="backdrop-blur-2xl border border-gray-500 p-4 rounded-lg bg-white">
+            <app-input inputLabel="Product Name" inputType="text" [required]="true" [control]="productForm.get('name')"
+                       placeholder="e.g Nokia Lumia"></app-input>
+            <app-input inputLabel="Product Price" inputType="number" [required]="true"
+                       [control]="productForm.get('price')"
+                       placeholder="e.g 10000"></app-input>
+            <div class="h-64">
+                <app-file inputLabel="Products Photo"
+                          [control]="productForm.get('image')" [required]="true"></app-file>
+            </div>
+            <app-input inputLabel="Tags" inputType="text" [required]="true" [control]="productForm.get('tags')"
+                       placeholder="e.g smartphone"></app-input>
+            <button class="py-2 w-full my-6 rounded-lg bg-purple-700 border text-white hover:bg-transparent hover:border-purple-700 hover:text-purple-700 flex items-center justify-center">
+                Add Product
+            </button>
+        </div>
+    </div>
+</form>

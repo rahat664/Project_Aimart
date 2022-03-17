@@ -1,0 +1,11 @@
+<label class="text-sm">{{inputLabel}}<span class="text-red-600 text-sm" *ngIf="required">*</span></label>
+<input class="border border-gray-400 rounded-lg w-full px-6 py-2 text-black w-full" type="{{inputType}}"
+       [formControl]="control" [placeholder]="placeholder" *ngIf="inputType !== 'textarea'"
+       [ngClass]="{'border-red-500': control.touched && control.invalid}">
+<textarea class="border border-gray-400 rounded-lg w-full px-3 py-1  text-black w-full" [formControl]="control"
+          [placeholder]="placeholder" *ngIf="inputType === 'textarea'"></textarea>
+<div class="text-xs text-red-600 flex space-x-4">
+    <ng-container *ngIf="control.touched && control.invalid">
+        <span>{{getErrorMessage (control.errors)}}</span>
+    </ng-container>
+</div>

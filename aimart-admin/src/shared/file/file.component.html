@@ -1,0 +1,21 @@
+<label class="text-sm">{{inputLabel}}<span class="text-red-600 text-sm" *ngIf="required">*</span></label>
+<div
+        class="w-[150px] h-[124px] border border-dotted border-gray-400 rounded-lg flex items-center justify-center text-primary hover:cursor-pointer hover:bg-primary hover:text-white"
+        *ngIf="!control.value" [ngClass]="{'border-red-500': control.touched && control.invalid}">
+    <label class="w-full h-full flex items-center justify-center" [attr.for]="fileId">
+        <span><i class="fas fa-camera mr-2"></i>Select {{types === 'pdf' ? 'files' : 'image'}}</span>
+    </label>
+    <input type="file" [attr.id]="fileId" name="file" (change)="onFileSelection($event)" class="hidden"
+           accept="image/*, pdf/*">
+</div>
+<div class="h-[124px] w-fit  relative" *ngIf="control && control.value?.src">
+    <img class="w-fit h-full" [src]="control.value.src" [alt]="control.value.name">
+    <button (click)="control.reset()"
+            class="flex justify-center text-white items-center w-8 h-8 rounded-full bg-purple-700 absolute -bottom-2 -right-2">
+        <i class="fas fa-trash-alt"></i></button>
+</div>
+<div class="text-xs text-red-600">
+    <ng-container *ngIf="control.touched && control.invalid">
+        <span>{{getErrorMessage(control.errors)}}</span>
+    </ng-container>
+</div>
