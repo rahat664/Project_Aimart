@@ -1,19 +1,45 @@
 <div class="bg-gray-300">
-    <nav class="flex justify-between w-full container mx-auto">
+    <nav class="flex justify-between items-center w-full container mx-auto">
         <div class="py-4 cursor-pointer" routerLink="/home" title="AIMART">
             <img class="w-full h-full" src="assets/aimart.png">
         </div>
-        <div>
+        <div class="hidden xl:block">
             <ul class="flex space-x-6 text-base font-bold">
-                <li class="p-4 cursor-pointer"  routerLink="/home" routerLinkActive="border"><a >Home</a></li>
-                <li class="p-4 cursor-pointer" routerLinkActive="border"  routerLink="/products"><a >Products</a></li>
-                <li class="p-4 cursor-pointer" routerLinkActive="border" routerLink="/about"><a >About</a></li>
-                <li class="p-4 cursor-pointer" routerLinkActive="border" routerLink="/contact"><a >Contact</a></li>
-                <li class="p-4 cursor-pointer" routerLinkActive="border" routerLink="/cart"><a ><i class="fas fa-shopping-cart"></i></a></li>
+                <li class="p-4 cursor-pointer hove" routerLink="/home" routerLinkActive="border"><a>Home</a></li>
+                <li class="p-4 cursor-pointer hove" routerLinkActive="border" routerLink="/products"><a>Products</a>
+                </li>
+                <li class="p-4 cursor-pointer hove" routerLinkActive="border" routerLink="/about"><a>About</a></li>
+                <li class="p-4 cursor-pointer hove" routerLinkActive="border" routerLink="/contact"><a>Contact</a></li>
+                <li class="p-4 cursor-pointer hove" routerLinkActive="border" routerLink="/cart"><a><i
+                        class="fas fa-shopping-cart"></i></a></li>
             </ul>
+        </div>
+        <div class="text-xl xl:hidden">
+            <button class="p-4" (click)="expanded = !expanded" *ngIf="!expanded">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button class="p-4" *ngIf="expanded" (click)="expanded = !expanded">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="p-4 cursor-pointer" routerLinkActive="border" routerLink="/cart"><a><i
+                    class="fas fa-shopping-cart"></i></a></button>
         </div>
     </nav>
 </div>
 <div class="py-2 bg-purple-700 text-white">
-    <marquee>স্বাধীনতার মাস উপলক্ষে আমাদের প্রতিটি পণ্যে থাকছে অবিশ্বাস্য মূল্যছাড়। তাই স্বল্প মূল্যে পণ্য কিনতে AIMART এর সাথেই থাকুন। </marquee>
+    <marquee>স্বাধীনতার মাস উপলক্ষে আমাদের প্রতিটি পণ্যে থাকছে অবিশ্বাস্য মূল্যছাড়। তাই স্বল্প মূল্যে পণ্য কিনতে AIMART
+        এর সাথেই থাকুন।
+    </marquee>
 </div>
+<nav class="xl:hidden" *ngIf="expanded">
+    <ul class="text-center">
+        <li (click)="expanded = false" style="border-bottom: 4px solid transparent" class="p-4 cursor-pointer hove"
+            routerLink="/home" routerLinkActive="border"><a>Home</a></li>
+        <li (click)="expanded = false" style="border-bottom: 4px solid transparent" class="p-4 cursor-pointer hove"
+            routerLinkActive="border" routerLink="/products"><a>Products</a></li>
+        <li (click)="expanded = false" style="border-bottom: 4px solid transparent" class="p-4 cursor-pointer hove"
+            routerLinkActive="border" routerLink="/about"><a>About</a></li>
+        <li (click)="expanded = false" style="border-bottom: 4px solid transparent" class="p-4 cursor-pointer hove"
+            routerLinkActive="border" routerLink="/contact"><a>Contact</a></li>
+    </ul>
+</nav>
