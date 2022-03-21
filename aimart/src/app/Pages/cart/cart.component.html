@@ -1,1 +1,37 @@
-<p>cart works!</p>
+<div class="my-2 text-base md:text-2xl drop-shadow-lg ">
+    <div class="flex justify-between text-center bg-purple-700 text-white p-4">
+        <h1 class="ml-8">Image</h1>
+        <div class="flex space-x-20 justify-between">
+            <h1 class="ml-16">Name</h1>
+            <h1>Quantity X Price</h1>
+        </div>
+        <h1>Increase/Decrease</h1>
+        <h1 class="mr-8"> Total</h1>
+    </div>
+    <div class="flex justify-between items-center my-4 p-4" *ngFor="let cart of cartItems">
+        <div style="height: 128px; width: 128px" class="border border-gray-300">
+            <img class="w-full h-full" [src]="cart.imageUrl | image" alt="">
+        </div>
+        <div class="flex space-x-6 items-center">
+            <h3>{{cart.name}}</h3>
+            <p>{{cart.price - 200}} X {{cart.quantity}} = {{(cart.price - 200) * cart.quantity}}</p>
+        </div>
+        <div class="flex">
+            <button (click)="increase(cart)"
+                    class="bg-green-700 text-white flex items-center justify-center p-2 lg:p-4 text-xl">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button (click)="decrease(cart)" *ngIf="cart.quantity > 1"
+                    class="bg-yellow-700 text-white flex items-center justify-center p-2 lg:p-4 text-xl">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button (click)="remove(cart)" *ngIf="cart.quantity === 1"
+                    class="bg-red-700 text-white flex items-center justify-center p-2 lg:p-4 text-xl">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="lg:px-6 px-4 py-2 lg:py-4 rounded-lg bg-green-700 text-white">
+            <p>{{cartTotal}}</p>
+        </div>
+    </div>
+</div>

@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.product.getProducts().subscribe(data => {
       this.products = data;
       console.log(this.products);

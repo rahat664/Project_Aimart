@@ -1,5 +1,9 @@
-<div class="sticky top-0 z-50">
-    <app-navbar></app-navbar>
+<div class="flex flex-col justify-between h-full">
+    <div class="sticky top-0 z-50">
+        <app-navbar></app-navbar>
+    </div>
+    <router-outlet></router-outlet>
+    <div class="justify-items-end">
+        <app-footer></app-footer>
+    </div>
 </div>
-<router-outlet></router-outlet>
-<app-footer></app-footer>

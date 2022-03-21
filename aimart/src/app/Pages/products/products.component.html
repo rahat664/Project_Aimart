@@ -1,1 +1,15 @@
-<p>products works!</p>
+<app-sub-heading title="Categories" image="featured"></app-sub-heading>
+<div class="grid lg:grid-cols-3 gap-4 place-items-center">
+    <button (click)="onClick(category)" *ngFor="let category of categories">
+        <app-category-card [catName]="category.name" [catImage]="category.image"></app-category-card>
+    </button>
+</div>
+<div>
+    <app-sub-heading [title]="selectedCatName" image="featured"></app-sub-heading>
+    <div class="grid lg:grid-cols-3 gap-6 my-4">
+        <div *ngFor="let product of selectedCategory">
+            <app-product-card [product]="product"></app-product-card>
+        </div>
+    </div>
+
+</div>

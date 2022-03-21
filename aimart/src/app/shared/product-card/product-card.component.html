@@ -11,47 +11,15 @@
                             class="text-red-700">{{product.price | currency: '৳'}}</s><span>{{(+product.price - 200) | currency: '৳'}}</span>
                     </p>
                 </div>
-                <div class="buy"><i class="fas fa-cart-plus"></i></div>
+                <button (click)="onclick(product)" class="buy"><i class="fas fa-cart-plus"></i></button>
             </div>
         </div>
     </div>
     <div class="inside">
         <div class="icon"><i class="fas fa-info"></i></div>
         <div class="contents">
-            <table>
-                <tr>
-                    <th>Width</th>
-                    <th>Height</th>
-                </tr>
-                <tr>
-                    <td>3000mm</td>
-                    <td>4000mm</td>
-                </tr>
-                <tr>
-                    <th>Something</th>
-                    <th>Something</th>
-                </tr>
-                <tr>
-                    <td>200mm</td>
-                    <td>200mm</td>
-                </tr>
-                <tr>
-                    <th>Something</th>
-                    <th>Something</th>
-                </tr>
-                <tr>
-                    <td>200mm</td>
-                    <td>200mm</td>
-                </tr>
-                <tr>
-                    <th>Something</th>
-                    <th>Something</th>
-                </tr>
-                <tr>
-                    <td>200mm</td>
-                    <td>200mm</td>
-                </tr>
-            </table>
+            <p class="text-2xl">Thanks For Visiting Our Website.</p>
+            <p class="text-2xl">Product Description is Upcoming</p>
         </div>
     </div>
 </div>

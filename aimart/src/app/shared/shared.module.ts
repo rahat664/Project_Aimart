@@ -8,6 +8,8 @@ import {SwiperModule} from "swiper/angular";
 import {ProductCardComponent} from './product-card/product-card.component';
 import {ImagePipe} from "./pipes/image.pipe";
 import {SubHeadingComponent} from './sub-heading/sub-heading.component';
+import {TeamCardComponent} from './team-card/team-card.component';
+import {CategoryCardComponent} from './category-card/category-card.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import {SubHeadingComponent} from './sub-heading/sub-heading.component';
         BannerComponent,
         ProductCardComponent,
         ImagePipe,
-        SubHeadingComponent
+        SubHeadingComponent,
+        TeamCardComponent,
+        CategoryCardComponent
     ],
     exports: [
         NavbarComponent,
@@ -25,7 +29,9 @@ import {SubHeadingComponent} from './sub-heading/sub-heading.component';
         BannerComponent,
         ProductCardComponent,
         ImagePipe,
-        SubHeadingComponent
+        SubHeadingComponent,
+        TeamCardComponent,
+        CategoryCardComponent
     ],
     imports: [
         CommonModule,

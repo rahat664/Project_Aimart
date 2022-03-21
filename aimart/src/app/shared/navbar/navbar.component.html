@@ -10,8 +10,13 @@
                 </li>
                 <li class="p-4 cursor-pointer hove" routerLinkActive="border" routerLink="/about"><a>About</a></li>
                 <li class="p-4 cursor-pointer hove" routerLinkActive="border" routerLink="/contact"><a>Contact</a></li>
-                <li class="p-4 cursor-pointer hove" routerLinkActive="border" routerLink="/cart"><a><i
-                        class="fas fa-shopping-cart"></i></a></li>
+                <li class="p-4 relative cursor-pointer hove" routerLinkActive="border" routerLink="/cart"><a><i
+                        class="fas fa-shopping-cart"></i></a>
+                    <div *ngIf="cart.length > 0"
+                         class="absolute bg-white flex items-center justify-center rounded-full w-6 h-6 top-5 -right-5 transform  -translate-y-1/2 mt-2 mr-2 text-center text-base">
+                        <p class="text-xl">{{cart.length}}</p>
+                    </div>
+                </li>
             </ul>
         </div>
         <div class="text-xl lg:hidden">
@@ -21,8 +26,13 @@
             <button class="p-4" *ngIf="expanded" (click)="expanded = !expanded">
                 <i class="fas fa-times"></i>
             </button>
-            <button class="p-4 cursor-pointer" routerLinkActive="border" routerLink="/cart"><a><i
-                    class="fas fa-shopping-cart"></i></a></button>
+            <button class="p-4 relative cursor-pointer mr-4" routerLinkActive="border" routerLink="/cart"><a><i
+                    class="fas fa-shopping-cart"></i></a>
+                <div *ngIf="cart.length > 0"
+                     class="absolute bg-white flex items-center justify-center rounded-full w-6 h-6 top-5 -right-5 transform  -translate-y-1/2 mt-2 mr-2 text-center text-base">
+                    <p class="text-xl">{{cart.length}}</p>
+                </div>
+            </button>
         </div>
     </nav>
 </div>
