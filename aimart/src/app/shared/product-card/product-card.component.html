@@ -1,0 +1,57 @@
+<div class="wrapper border border-gray-500">
+    <div class="container">
+        <div class="top flex items-center">
+            <img width="100%" class="p-4" loading="lazy" [src]="product?.imageUrl | image" alt="">
+        </div>
+        <div class="bottom">
+            <div class="left">
+                <div class="details">
+                    <h1 class="font-bold capitalize text-base">{{product.name}}</h1>
+                    <p class="flex space-x-6"><s
+                            class="text-red-700">{{product.price | currency: '৳'}}</s><span>{{(+product.price - 200) | currency: '৳'}}</span>
+                    </p>
+                </div>
+                <div class="buy"><i class="fas fa-cart-plus"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="inside">
+        <div class="icon"><i class="fas fa-info"></i></div>
+        <div class="contents">
+            <table>
+                <tr>
+                    <th>Width</th>
+                    <th>Height</th>
+                </tr>
+                <tr>
+                    <td>3000mm</td>
+                    <td>4000mm</td>
+                </tr>
+                <tr>
+                    <th>Something</th>
+                    <th>Something</th>
+                </tr>
+                <tr>
+                    <td>200mm</td>
+                    <td>200mm</td>
+                </tr>
+                <tr>
+                    <th>Something</th>
+                    <th>Something</th>
+                </tr>
+                <tr>
+                    <td>200mm</td>
+                    <td>200mm</td>
+                </tr>
+                <tr>
+                    <th>Something</th>
+                    <th>Something</th>
+                </tr>
+                <tr>
+                    <td>200mm</td>
+                    <td>200mm</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

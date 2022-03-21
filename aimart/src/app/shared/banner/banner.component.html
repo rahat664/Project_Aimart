@@ -1,0 +1,31 @@
+<main>
+    <div>
+        <swiper [loop]="true" [autoHeight]="true" [allowTouchMove]="false"
+                [autoplay]="{ delay: 1000, disableOnInteraction: false }" [pagination]="{ clickable: true }"
+                [navigation]="true">
+            <ng-template data-swiper-autoplay="6000" swiperSlide>
+                <div class="w-[100vw]" style="height: 80vh !important;">
+                    <img class="w-full h-full object-center object-fill"
+                         src="https://images.pexels.com/photos/5650050/pexels-photo-5650050.jpeg?cs=srgb&dl=pexels-karolina-grabowska-5650050.jpg&fm=jpg"
+                         alt="">
+                </div>
+            </ng-template>
+
+            <ng-template data-swiper-autoplay="10000" class="swiper-slide" swiperSlide>
+                <div class="w-[100vw] " style="height: 80vh !important;">
+                    <img class="w-full h-full object-center  object-fill"
+                         src="https://images.pexels.com/photos/1470167/pexels-photo-1470167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         alt="">
+                </div>
+            </ng-template>
+
+            <ng-template data-swiper-autoplay="60000" swiperSlide>
+                <div class="w-[100vw]" style="height: 80vh !important;">
+                    <img class="w-full h-full object-center object-fill"
+                         src="https://images.pexels.com/photos/2253839/pexels-photo-2253839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         alt="">
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+</main>

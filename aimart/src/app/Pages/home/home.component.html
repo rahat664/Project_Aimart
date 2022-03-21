@@ -1,1 +1,25 @@
-<p>home works!</p>
+<div class="flex flex-col space-y-6">
+    <app-banner></app-banner>
+    <div>
+        <app-sub-heading title="Featured Product" image="featured"></app-sub-heading>
+        <div class="grid lg:grid-cols-3 gap-6 my-4">
+            <div *ngFor="let product of Featured">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+        </div>
+
+        <app-sub-heading title="Top Sellers" image="top"></app-sub-heading>
+        <div class="grid lg:grid-cols-3 gap-6 my-4">
+            <div *ngFor="let product of TopSellers">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+        </div>
+        <app-sub-heading title="Favorites" image="favorite"></app-sub-heading>
+        <div class="grid lg:grid-cols-3 gap-6 my-4">
+            <div *ngFor="let product of Favorites">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+        </div>
+    </div>
+
+</div>

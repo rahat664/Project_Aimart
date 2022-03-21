@@ -1,9 +1,9 @@
-<div class="bg-gray-300">
+<div class="bg-gray-300 ">
     <nav class="flex justify-between items-center w-full container mx-auto">
         <div class="py-4 cursor-pointer" routerLink="/home" title="AIMART">
             <img class="w-full h-full" src="assets/aimart.png">
         </div>
-        <div class="hidden xl:block">
+        <div class="hidden lg:block">
             <ul class="flex space-x-6 text-base font-bold">
                 <li class="p-4 cursor-pointer hove" routerLink="/home" routerLinkActive="border"><a>Home</a></li>
                 <li class="p-4 cursor-pointer hove" routerLinkActive="border" routerLink="/products"><a>Products</a>
@@ -14,7 +14,7 @@
                         class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
-        <div class="text-xl xl:hidden">
+        <div class="text-xl lg:hidden">
             <button class="p-4" (click)="expanded = !expanded" *ngIf="!expanded">
                 <i class="fas fa-bars"></i>
             </button>
@@ -31,7 +31,7 @@
         এর সাথেই থাকুন।
     </marquee>
 </div>
-<nav class="xl:hidden" *ngIf="expanded">
+<nav class="lg:hidden" *ngIf="expanded">
     <ul class="text-center">
         <li (click)="expanded = false" style="border-bottom: 4px solid transparent" class="p-4 cursor-pointer hove"
             routerLink="/home" routerLinkActive="border"><a>Home</a></li>
