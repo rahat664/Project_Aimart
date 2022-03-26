@@ -4,7 +4,7 @@
         <app-category-card [catName]="category.name" [catImage]="category.image"></app-category-card>
     </button>
 </div>
-<div>
+<div #products>
     <app-sub-heading [title]="selectedCatName" image="featured"></app-sub-heading>
     <div class="grid lg:grid-cols-3 gap-6 my-4">
         <div *ngFor="let product of selectedCategory">
