@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ProductService} from "../../services/product.service";
 
 @Component({
@@ -44,7 +44,8 @@ export class ProductsComponent implements OnInit {
   Furniture: any[];
   Smartphones: any[];
   TopSellers: any[];
-  selectedCategory: any[] = [];
+  selectedCategory: any[] = []
+  @ViewChild('products') productsEl: HTMLElement;
 
   constructor(private product: ProductService) {
   }
