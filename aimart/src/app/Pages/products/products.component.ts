@@ -45,12 +45,13 @@ export class ProductsComponent implements OnInit {
   Smartphones: any[];
   TopSellers: any[];
   selectedCategory: any[] = []
-  @ViewChild('products') productsEl: HTMLElement;
+  @ViewChild('products') productsEl: ElementRef;
 
   constructor(private product: ProductService) {
   }
 
   ngOnInit(): void {
+    this.scrollTo(this.productsEl);
     window.scrollTo(0, 0);
     this.product.getProducts().subscribe(data => {
       this.products = data;
@@ -97,5 +98,10 @@ export class ProductsComponent implements OnInit {
       this.selectedCatName = '';
       this.selectedCatName = 'Furniture';
     }
+  }
+
+  scrollTo(el: ElementRef) {
+    el.nativeElement.scrollIntoView({behavior: 'smooth'});
+    window.scrollTo(0, el.nativeElement.offsetTop);
   }
 }
