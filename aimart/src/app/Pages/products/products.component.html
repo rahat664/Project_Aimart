@@ -1,6 +1,6 @@
 <app-sub-heading title="Categories" image="featured"></app-sub-heading>
 <div class="grid lg:grid-cols-3 gap-4 place-items-center">
-    <button (click)="onClick(category)" *ngFor="let category of categories">
+    <button (click)="onClick(category); scrollTo(products)" *ngFor="let category of categories">
         <app-category-card [catName]="category.name" [catImage]="category.image"></app-category-card>
     </button>
 </div>

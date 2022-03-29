@@ -51,7 +51,6 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.scrollTo(this.productsEl);
     window.scrollTo(0, 0);
     this.product.getProducts().subscribe(data => {
       this.products = data;
@@ -100,8 +99,9 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  scrollTo(el: ElementRef) {
-    el.nativeElement.scrollIntoView({behavior: 'smooth'});
+  scrollTo(el: HTMLDivElement) {
+    el.scrollIntoView({behavior: 'smooth'});
+    // @ts-ignore
     window.scrollTo(0, el.nativeElement.offsetTop);
   }
 }
